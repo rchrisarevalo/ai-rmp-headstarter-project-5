@@ -1,0 +1,15 @@
+backports.tarfile==1.2.0
+grpcio==1.65.5
+importlib-metadata==8.0.0
+importlib-resources==6.4.0
+jaraco.text==3.12.1
+lz4==4.3.3
+openai==1.42.0
+ordered-set==4.1.0
+packaging==24.1
+pinecone==5.0.1
+pip-chill==1.0.3
+platformdirs==4.2.2
+protoc-gen-openapiv2==0.0.1
+python-dotenv==1.0.1
+tomli==2.0.1
