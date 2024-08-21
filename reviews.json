@@ -1,0 +1,124 @@
+{
+  "reviews": [
+    {
+      "professor": "Dr. Emily Foster",
+      "subject": "Computer Science",
+      "stars": 5,
+      "review": "Dr. Foster is an amazing professor! She explains complex topics clearly and is always willing to help outside of class. Highly recommend her courses."
+    },
+    {
+      "professor": "Dr. James Mitchell",
+      "subject": "Mathematics",
+      "stars": 3,
+      "review": "Dr. Mitchell knows his stuff, but his lectures can be dry. You need to put in a lot of effort to keep up, but he's fair in grading."
+    },
+    {
+      "professor": "Prof. Susan Reynolds",
+      "subject": "History",
+      "stars": 4,
+      "review": "Prof. Reynolds is very knowledgeable and engaging. Her lectures are well-organized, but she gives a lot of reading assignments."
+    },
+    {
+      "professor": "Dr. Brian Lee",
+      "subject": "Chemistry",
+      "stars": 2,
+      "review": "Dr. Lee is very difficult to follow in lectures. He goes through material too fast, and the exams are extremely tough."
+    },
+    {
+      "professor": "Dr. Linda Patel",
+      "subject": "Physics",
+      "stars": 5,
+      "review": "Dr. Patel is fantastic! She makes difficult concepts easy to understand and truly cares about her students' success."
+    },
+    {
+      "professor": "Prof. Michael Brown",
+      "subject": "Philosophy",
+      "stars": 3,
+      "review": "Prof. Brown is interesting, but his grading can be harsh. Make sure to participate in discussions, as it heavily impacts your grade."
+    },
+    {
+      "professor": "Dr. Karen Thompson",
+      "subject": "Biology",
+      "stars": 4,
+      "review": "Dr. Thompson is very passionate about biology and makes lectures engaging. Labs are a bit intense, but they help reinforce the material."
+    },
+    {
+      "professor": "Dr. William Chen",
+      "subject": "Economics",
+      "stars": 2,
+      "review": "Dr. Chen is knowledgeable, but his lectures are monotonous. It's hard to stay awake in class, and the exams are tricky."
+    },
+    {
+      "professor": "Prof. Anna Davis",
+      "subject": "Literature",
+      "stars": 5,
+      "review": "Prof. Davis is wonderful! She encourages deep thinking and discussion. Her feedback on essays is thorough and constructive."
+    },
+    {
+      "professor": "Dr. Robert Wilson",
+      "subject": "Political Science",
+      "stars": 4,
+      "review": "Dr. Wilson is a great lecturer with real-world experience. His exams are challenging but fair. Stay updated on current events for his class."
+    },
+    {
+      "professor": "Prof. Sarah Hernandez",
+      "subject": "Sociology",
+      "stars": 5,
+      "review": "Prof. Hernandez is very supportive and creates a welcoming classroom environment. Her classes are discussion-based, which I enjoyed."
+    },
+    {
+      "professor": "Dr. David Miller",
+      "subject": "Psychology",
+      "stars": 3,
+      "review": "Dr. Miller is knowledgeable but can be unapproachable. The material is interesting, but the exams are very difficult."
+    },
+    {
+      "professor": "Prof. Laura Evans",
+      "subject": "Art History",
+      "stars": 4,
+      "review": "Prof. Evans has a deep passion for art and it shows in her lectures. However, the workload is heavy, so be prepared."
+    },
+    {
+      "professor": "Dr. John Carter",
+      "subject": "Statistics",
+      "stars": 2,
+      "review": "Dr. Carter's lectures are confusing, and he rarely answers questions clearly. The textbook is essential if you want to pass."
+    },
+    {
+      "professor": "Prof. Jessica Kim",
+      "subject": "Environmental Science",
+      "stars": 5,
+      "review": "Prof. Kim is an excellent instructor. Her classes are interactive, and she really cares about the environment and her students."
+    },
+    {
+      "professor": "Dr. Steven Wright",
+      "subject": "Anthropology",
+      "stars": 3,
+      "review": "Dr. Wright is interesting, but his lectures can be all over the place. His grading is fair, but you'll need to stay organized."
+    },
+    {
+      "professor": "Prof. Megan Lewis",
+      "subject": "Communication",
+      "stars": 4,
+      "review": "Prof. Lewis is very engaging and makes class enjoyable. The group projects can be a bit challenging, but they're manageable."
+    },
+    {
+      "professor": "Dr. Thomas Green",
+      "subject": "Engineering",
+      "stars": 2,
+      "review": "Dr. Green's classes are tough. He expects a lot from students and doesn’t offer much help. Be ready to struggle."
+    },
+    {
+      "professor": "Prof. Elizabeth Martinez",
+      "subject": "Music",
+      "stars": 5,
+      "review": "Prof. Martinez is incredibly passionate about music. Her classes are inspiring, and she offers great feedback on performances."
+    },
+    {
+      "professor": "Dr. Richard Allen",
+      "subject": "Law",
+      "stars": 3,
+      "review": "Dr. Allen is strict and demands a lot of reading. If you're serious about law, you'll learn a lot, but it's not an easy ride."
+    }
+  ]
+}
