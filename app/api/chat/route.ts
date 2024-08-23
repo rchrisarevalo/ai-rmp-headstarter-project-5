@@ -1,6 +1,7 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { Pinecone } from "@pinecone-database/pinecone";
 import OpenAI from "openai";
+import { ChatMessage } from "@/app/types/types.config";
 
 const systemPrompt = `
 You are an intelligent "Rate My Professor" agent designed to assist students in finding professors that match their specific needs and preferences. Your primary function is to analyze a vast database of professor reviews and provide tailored recommendations based on student queries.
@@ -51,15 +52,19 @@ Guidelines for responses:
 Your responses should be helpful, informative, and tailored to each student's unique situation. Aim to empower students to make informed decisions about their academic choices while maintaining a respectful and professional tone.
 `;
 
-export async function post(request) {
-  const data = await request.json();
+type ChatReq = {
+  content: string
+}
+
+export async function POST(request: NextRequest) {
+  const data: ChatMessage[] = await request.json();
   const pc = new Pinecone({
-    apiKey: process.env.PINECONE_API_KEY,
+    apiKey: process.env.PINECONE_API_KEY as string,
   });
   const index = pc.index("rag").namespace("ns1");
   const openai = new OpenAI();
 
-  const text = data(data.length - 1).content;
+  const text = data[data.length - 1].content;
   const embedding = await openai.embeddings.create({
     model: "text-embedding-3-small",
     input: text,
@@ -72,49 +77,50 @@ export async function post(request) {
     vector: embedding.data[0].embedding,
   });
 
+  console.log(results)
+
   let resultString = "\n\nReturned results from vector DB done automatically: ";
   results.matches.forEach((match) => {
     resultString += `\n
     
     Professor: ${match.id}
-    Review: ${match.metadata.review}
-    Subject: ${match.metadata.subject}
-    Stars ${match.metadata.stars}
+    Review: ${match.metadata?.review}
+    Subject: ${match.metadata?.subject}
+    Stars ${match.metadata?.stars}
     \n\n
     `;
   });
 
-  const lastMessage = data[data.length - 1].content;
-  const lastMessageContent = lastMessage + resultString;
-  const lastDataWithoutLastMessage = data.slice(0, data.length - 1);
+  console.log(resultString)
+
+  // const lastMessage = data[data.length - 1].content;
+  // const lastMessageContent = lastMessage + resultString;
+  // const lastDataWithoutLastMessage = data.slice(0, data.length - 1);
   const completion = await openai.chat.completions.create({
-    messages: [
-      { role: "system", content: systemPrompt },
-      ...lastDataWithoutLastMessage,
-      { role: "user", content: lastMessageContent },
-    ],
+    messages: data as OpenAI.Chat.Completions.ChatCompletionMessageParam[],
     model: "gpt-4o-mini",
-    stream: true,
   });
 
-  const stream = new ReadableStream({
-    async start(controller) {
-      const encoder = new TextEncoder();
-      try {
-        for await (const chuck of completion) {
-          const content = chuck.choices[0]?.delta?.content;
-          if (content) {
-            const text = encoder.encode(content);
-            controller.enqueue(text);
-          }
-        }
-      } catch (error) {
-        controller.error(error);
-      } finally {
-        controller.close();
-      }
-    },
-  });
+  // const stream = new ReadableStream({
+  //   async start(controller) {
+  //     const encoder = new TextEncoder();
+  //     try {
+  //       for await (const chuck of completion) {
+  //         const content = chuck.choices[0]?.delta?.content;
+  //         if (content) {
+  //           const text = encoder.encode(content);
+  //           controller.enqueue(text);
+  //         }
+  //       }
+  //     } catch (error) {
+  //       controller.error(error);
+  //     } finally {
+  //       controller.close();
+  //     }
+  //   },
+  // });
 
-  return new NextResponse(stream);
+  // console.log("Finished!")
+
+  return NextResponse.json({role: 'assistant', content: completion.choices[0].message.content});
 }
