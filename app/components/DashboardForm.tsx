@@ -16,15 +16,41 @@ const DashboardForm: React.FC<DashboardFormProps> = ({
     // Prevent automatic submissions.
     e.preventDefault();
 
-    // Clear current message from text input box.
-    setUserMessage("");
-
     // Update the chatMessages array state variable to store
     // the messages from the user typing in their response.
     setChatMessages((prev) => [
       ...prev,
       { role: "user", content: userMessage },
     ]);
+
+    // Fetch the personalized suggestions from the RAG implementation
+    // using Pinecone and from the OpenAI API.
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify([
+          ...chatMessages,
+          { role: 'user', content: userMessage },
+          { role: 'assistant', content: '' }
+        ]),
+      });
+
+      if (res.ok) {
+        const data: ChatMessage = await res.json()
+        console.log(data)
+        setChatMessages((prev) => [
+          ...prev,
+          data
+        ])
+      } else {
+        console.error("Failed to retrieve personalized suggestions.");
+      }
+    } catch {
+      throw new Error("Failed to retrieve personalized suggestions.");
+    }
   };
 
   return (
