@@ -77,8 +77,6 @@ export async function POST(request: NextRequest) {
     vector: embedding.data[0].embedding,
   });
 
-  console.log(results)
-
   let resultString = "\n\nReturned results from vector DB done automatically: ";
   results.matches.forEach((match) => {
     resultString += `\n
@@ -91,15 +89,22 @@ export async function POST(request: NextRequest) {
     `;
   });
 
-  console.log(resultString)
+  const lastMessage = data[data.length - 1].content;
+  const lastMessageContent = lastMessage + resultString;
+  const lastDataWithoutLastMessage = data.slice(0, data.length - 1);
 
-  // const lastMessage = data[data.length - 1].content;
-  // const lastMessageContent = lastMessage + resultString;
-  // const lastDataWithoutLastMessage = data.slice(0, data.length - 1);
+  // Pushes recommendations into array containing messages
+  // between user and assistant to provide recommended
+  // professors when returning the response from the AI
+  // to the user.
+  data.push({role: 'user', content: lastMessageContent})
+
   const completion = await openai.chat.completions.create({
     messages: data as OpenAI.Chat.Completions.ChatCompletionMessageParam[],
     model: "gpt-4o-mini",
   });
+
+  const response = completion.choices[0].message.content
 
   // const stream = new ReadableStream({
   //   async start(controller) {
@@ -122,5 +127,5 @@ export async function POST(request: NextRequest) {
 
   // console.log("Finished!")
 
-  return NextResponse.json({role: 'assistant', content: completion.choices[0].message.content});
+  return NextResponse.json({role: 'assistant', content: response});
 }
