@@ -21,11 +21,11 @@ export default function Home() {
       <Nav />
       <div className="flex flex-col font-['Source_Sans_Pro'] mt-16 text-lg items-center max-sm:w-screen justify-evenly p-24 rounded-lg bg-slate-300 gap-12">
         <Dashboard>
-          {chatMessages.map((message) =>
+          {chatMessages.map((message, index) =>
             message.role == "assistant" ? (
-              <BotRes message={message.content} />
+              <BotRes key={index} message={message.content} />
             ) : (
-              <UserRes message={message.content} />
+              <UserRes key={index} message={message.content} />
             )
           )}
         </Dashboard>
