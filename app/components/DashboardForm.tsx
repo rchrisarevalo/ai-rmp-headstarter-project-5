@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ChatMessage } from "../types/types.config";
+import { IoIosSend } from "react-icons/io";
 
 interface DashboardFormProps {
   chatMessages: ChatMessage[];
@@ -63,16 +64,17 @@ const DashboardForm: React.FC<DashboardFormProps> = ({
           cols={50}
           rows={1}
           placeholder="Enter your response here"
-          className="p-4 flex items-center rounded-lg outline-none border-transparent resize-none"
+          className="p-4 flex w-full items-center rounded-lg outline-none border-transparent resize-none"
           onChange={(e) => setUserMessage(e.target.value)}
           value={userMessage}
           required
         ></textarea>
         <button
           type="submit"
-          className="p-5 pl-10 pr-10 rounded-lg bg-slate-500 transition ease-in-out hover:bg-black text-white font-extrabold"
+          className="p-5 flex flex-row gap-x-1 items-center justify-center pl-10 pr-10 rounded-lg bg-slate-500 transition ease-in-out hover:bg-black text-white font-extrabold"
         >
           Submit
+          <p className="text-3xl"><IoIosSend /></p>
         </button>
       </form>
     </div>

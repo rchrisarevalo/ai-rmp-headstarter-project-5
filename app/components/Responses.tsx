@@ -13,7 +13,7 @@ interface ResProps {
 const UserRes: React.FC<ResProps> = ({ message }) => {
   return (
     <div className="w-full flex flex-row justify-end text-white">
-      <div className="bg-blue-600 p-10 w-1/2 max-sm:w-4/5 rounded-lg">
+      <div className="bg-blue-600 p-5 max-w-[75%] rounded-lg">
         {message}
       </div>
     </div>
@@ -23,7 +23,7 @@ const UserRes: React.FC<ResProps> = ({ message }) => {
 const BotRes: React.FC<ResProps> = ({ message }) => {
   return (
     <div className="w-full flex flex-row justify-start text-black">
-      <div className="bg-slate-300 p-10 w-1/2 max-sm:w-4/5 rounded-lg">
+      <div className="bg-slate-300 p-5 max-w-[75%] rounded-lg">
         <Markdown>
           {message}
         </Markdown>
