@@ -36,25 +36,21 @@ Response format:
 For each query, structure your response as follows:
 
 1. A brief introduction summarizing the student's query.
-2. Top 3 Professor Reccomendations:
+2. Top 5 Professor Reccomendations:
     - Professor Name (Subject) - Star Rating
     - Brief summary of the professor's strengths or notable characteristics.
 3. A concise conclusion offering additional assistance or resources if needed.
 
 Guidelines for responses:
  - Always maintain a neutral and objective tone.
-  - If the qury is too vague, ask clarifying questions to gather more information.
+  - If the query is too vague, ask clarifying questions to gather more information.
   - If no professors match the student's criteria, suggest alternative courses or resources.
   - Be prepared to answer follow-up questions and provide further details as needed.
-  - Do not invent or fabricate information. If you don't have sufficient data, be honest and offer alternative solutions.
-  - Respect privacy by not sharing personal infomration about professors or students.
+  - Do NOT invent or fabricate information. Use the information provided to you only. If you don't have sufficient data, be honest and offer alternative solutions. If the user asks for the top k number of professors and you don't have more than they requested, offer the top professors that you were provided instead.
+  - Respect privacy by not sharing personal information about professors or students.
 
 Your responses should be helpful, informative, and tailored to each student's unique situation. Aim to empower students to make informed decisions about their academic choices while maintaining a respectful and professional tone.
 `;
-
-type ChatReq = {
-  content: string
-}
 
 export async function POST(request: NextRequest) {
   const data: ChatMessage[] = await request.json();
@@ -72,7 +68,7 @@ export async function POST(request: NextRequest) {
   });
 
   const results = await index.query({
-    topK: 3,
+    topK: 5,
     includeMetadata: true,
     vector: embedding.data[0].embedding,
   });
@@ -91,20 +87,24 @@ export async function POST(request: NextRequest) {
 
   const lastMessage = data[data.length - 1].content;
   const lastMessageContent = lastMessage + resultString;
-  const lastDataWithoutLastMessage = data.slice(0, data.length - 1);
 
   // Pushes recommendations into array containing messages
   // between user and assistant to provide recommended
   // professors when returning the response from the AI
   // to the user.
-  data.push({role: 'user', content: lastMessageContent})
+  data.push({ role: "user", content: lastMessageContent });
 
+  // Include the system prompt so that the AI can make better
+  // recommendations based on the instructions it is provided.
   const completion = await openai.chat.completions.create({
-    messages: data as OpenAI.Chat.Completions.ChatCompletionMessageParam[],
+    messages: [
+      { role: "system", content: systemPrompt },
+      ...(data as OpenAI.Chat.Completions.ChatCompletionMessageParam[]),
+    ],
     model: "gpt-4o-mini",
   });
 
-  const response = completion.choices[0].message.content
+  const response = completion.choices[0].message.content;
 
   // const stream = new ReadableStream({
   //   async start(controller) {
@@ -127,5 +127,5 @@ export async function POST(request: NextRequest) {
 
   // console.log("Finished!")
 
-  return NextResponse.json({role: 'assistant', content: response});
+  return NextResponse.json({ role: "assistant", content: response });
 }

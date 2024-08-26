@@ -38,13 +38,16 @@ export default function Home() {
         <div className="shadow-xl flex flex-col font-['Source_Sans_Pro'] w-[60%] mt-16 text-lg items-center max-sm:w-screen justify-evenly p-12 rounded-lg bg-slate-300 gap-12">
           <Dashboard>
             {chatMessages.map((message, i) =>
-              <span key={`message-${i}`}>
-                {message.role == "assistant" ? (
-                  <BotRes message={message.content} />
-                ) : (
-                  <UserRes message={message.content} />
-                )}
-              </span>
+              <>
+                <span key={`message-${i}`}>
+                  {message.role == "assistant" ? (
+                    <BotRes message={message.content} />
+                  ) : (
+                    <UserRes message={message.content} />
+                  )}
+                </span>
+                <br></br>
+              </>
             )}
           </Dashboard>
           <DashboardForm

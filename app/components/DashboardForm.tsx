@@ -17,6 +17,8 @@ const DashboardForm: React.FC<DashboardFormProps> = ({
     // Prevent automatic submissions.
     e.preventDefault();
 
+    setUserMessage("");
+
     // Update the chatMessages array state variable to store
     // the messages from the user typing in their response.
     setChatMessages((prev) => [
@@ -41,7 +43,6 @@ const DashboardForm: React.FC<DashboardFormProps> = ({
 
       if (res.ok) {
         const data: ChatMessage = await res.json()
-        console.log(data)
         setChatMessages((prev) => [
           ...prev,
           data
