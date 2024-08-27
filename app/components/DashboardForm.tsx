@@ -17,8 +17,6 @@ const DashboardForm: React.FC<DashboardFormProps> = ({
     // Prevent automatic submissions.
     e.preventDefault();
 
-    setUserMessage("");
-
     // Update the chatMessages array state variable to store
     // the messages from the user typing in their response.
     setChatMessages((prev) => [
@@ -47,6 +45,9 @@ const DashboardForm: React.FC<DashboardFormProps> = ({
           ...prev,
           data
         ])
+
+        // Clear message from prompt.
+        setUserMessage("");
       } else {
         console.error("Failed to retrieve personalized suggestions.");
       }

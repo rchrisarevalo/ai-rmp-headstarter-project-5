@@ -119,6 +119,186 @@
       "subject": "Law",
       "stars": 3,
       "review": "Dr. Allen is strict and demands a lot of reading. If you're serious about law, you'll learn a lot, but it's not an easy ride."
+    },
+    {
+      "professor": "Dr. Susan Bennett",
+      "subject": "Biology",
+      "stars": 4,
+      "review": "Dr. Bennett is passionate about biology and makes lectures engaging. However, her exams are tough, so be prepared to study hard."
+    },
+    {
+      "professor": "Dr. Michael Chen",
+      "subject": "Physics",
+      "stars": 5,
+      "review": "Dr. Chen is amazing! His explanations are clear, and he makes physics approachable. Highly recommend his class."
+    },
+    {
+      "professor": "Dr. Karen Davis",
+      "subject": "Psychology",
+      "stars": 2,
+      "review": "Dr. Davis's lectures are disorganized, and it's hard to follow her. The content is interesting, but the teaching style isn't great."
+    },
+    {
+      "professor": "Dr. Edward Thompson",
+      "subject": "Chemistry",
+      "stars": 3,
+      "review": "Dr. Thompson knows his stuff, but his lectures are dull. The labs are more interesting, but you need to put in the effort."
+    },
+    {
+      "professor": "Dr. Jennifer Lee",
+      "subject": "English Literature",
+      "stars": 4,
+      "review": "Dr. Lee is a great professor who encourages deep discussions. Her grading is fair, but you need to be prepared to write a lot."
+    },
+    {
+      "professor": "Dr. Robert Smith",
+      "subject": "Mathematics",
+      "stars": 5,
+      "review": "Dr. Smith is fantastic at explaining complex concepts. His classes are challenging but very rewarding."
+    },
+    {
+      "professor": "Dr. Alice Martin",
+      "subject": "Philosophy",
+      "stars": 3,
+      "review": "Dr. Martin has interesting lectures, but her grading can be harsh. Participate in discussions to get the most out of her class."
+    },
+    {
+      "professor": "Dr. George Brown",
+      "subject": "Economics",
+      "stars": 4,
+      "review": "Dr. Brown makes economics relevant and engaging. The workload is manageable, but you need to stay on top of the readings."
+    },
+    {
+      "professor": "Dr. Linda Wilson",
+      "subject": "History",
+      "stars": 2,
+      "review": "Dr. Wilson's lectures are dry, and she relies heavily on slides. The exams are based on memorization rather than understanding."
+    },
+    {
+      "professor": "Dr. James Walker",
+      "subject": "Sociology",
+      "stars": 4,
+      "review": "Dr. Walker is insightful and encourages critical thinking. The class discussions are stimulating, but the readings are heavy."
+    },
+    {
+      "professor": "Dr. Patricia Green",
+      "subject": "Environmental Science",
+      "stars": 5,
+      "review": "Dr. Green is passionate about the environment and makes the subject come alive. The field trips are a highlight!"
+    },
+    {
+      "professor": "Dr. William Taylor",
+      "subject": "Political Science",
+      "stars": 3,
+      "review": "Dr. Taylor is knowledgeable but can be biased in his views. Participate in class discussions to challenge his perspectives."
+    },
+    {
+      "professor": "Dr. Emily White",
+      "subject": "Anthropology",
+      "stars": 4,
+      "review": "Dr. White's classes are fascinating, but her exams are tricky. Take good notes and review them regularly."
+    },
+    {
+      "professor": "Dr. Charles Harris",
+      "subject": "Business Administration",
+      "stars": 3,
+      "review": "Dr. Harris is experienced, but his lectures are outdated. The projects are useful, but the class lacks innovation."
+    },
+    {
+      "professor": "Dr. Jessica Clark",
+      "subject": "Art History",
+      "stars": 5,
+      "review": "Dr. Clark is passionate and engaging. She makes art history interesting, and her enthusiasm is contagious."
+    },
+    {
+      "professor": "Dr. Steven Adams",
+      "subject": "Computer Science",
+      "stars": 4,
+      "review": "Dr. Adams is knowledgeable, but his lectures can be dense. The assignments are challenging but help you learn a lot."
+    },
+    {
+      "professor": "Dr. Barbara Robinson",
+      "subject": "Chemistry",
+      "stars": 2,
+      "review": "Dr. Robinson's lectures are confusing, and she doesn't explain concepts well. The lab work is interesting but overwhelming."
+    },
+    {
+      "professor": "Dr. Richard Clark",
+      "subject": "Finance",
+      "stars": 4,
+      "review": "Dr. Clark is thorough and clear in his explanations. The material is complex, but he makes it understandable."
+    },
+    {
+      "professor": "Dr. Mary Johnson",
+      "subject": "Nursing",
+      "stars": 5,
+      "review": "Dr. Johnson is an excellent professor with real-world experience. She cares about her students and prepares them well for the field."
+    },
+    {
+      "professor": "Dr. Daniel King",
+      "subject": "Engineering",
+      "stars": 3,
+      "review": "Dr. King is tough and expects a lot from his students. If you put in the effort, you'll learn a lot, but it's not an easy course."
+    },
+    {
+      "professor": "Dr. Lisa Thompson",
+      "subject": "Computer Science",
+      "stars": 5,
+      "review": "Dr. Thompson is fantastic! She explains complex algorithms clearly and is always available for extra help. Her assignments are challenging but very rewarding."
+    },
+    {
+      "professor": "Dr. Mark Johnson",
+      "subject": "Computer Science",
+      "stars": 3,
+      "review": "Dr. Johnson knows his stuff, but his lectures are dry. The projects are interesting, but you'll need to put in a lot of independent work to succeed."
+    },
+    {
+      "professor": "Dr. Karen Roberts",
+      "subject": "Computer Science",
+      "stars": 4,
+      "review": "Dr. Roberts is a great professor who genuinely cares about her students. Her classes are well-structured, but expect a heavy workload."
+    },
+    {
+      "professor": "Dr. David Williams",
+      "subject": "Computer Science",
+      "stars": 2,
+      "review": "Dr. Williams is very knowledgeable, but his teaching style is confusing. It's hard to keep up with the material, and the assignments are poorly explained."
+    },
+    {
+      "professor": "Dr. Michael Davis",
+      "subject": "Computer Science",
+      "stars": 5,
+      "review": "Dr. Davis is one of the best professors in the department. He makes coding fun, and his examples are always relevant to real-world scenarios."
+    },
+    {
+      "professor": "Dr. Sandra Lee",
+      "subject": "Computer Science",
+      "stars": 3,
+      "review": "Dr. Lee is tough but fair. Her exams are difficult, but if you attend lectures and do the assignments, you'll do well. Be prepared to work hard."
+    },
+    {
+      "professor": "Dr. John Carter",
+      "subject": "Computer Science",
+      "stars": 4,
+      "review": "Dr. Carter is an excellent teacher who provides clear explanations and practical examples. The course is challenging, but he makes sure you understand the concepts."
+    },
+    {
+      "professor": "Dr. Emily Brown",
+      "subject": "Computer Science",
+      "stars": 5,
+      "review": "Dr. Brown is an outstanding professor who makes difficult topics easy to understand. Her classes are engaging, and she always encourages questions."
+    },
+    {
+      "professor": "Dr. William Garcia",
+      "subject": "Computer Science",
+      "stars": 2,
+      "review": "Dr. Garcia's lectures are monotonous, and he doesn't engage with students. The material is interesting, but the delivery makes it hard to stay focused."
+    },
+    {
+      "professor": "Dr. Anna Miller",
+      "subject": "Computer Science",
+      "stars": 4,
+      "review": "Dr. Miller is very knowledgeable and provides great resources for learning. Her assignments are challenging but help you truly grasp the material."
     }
   ]
 }
