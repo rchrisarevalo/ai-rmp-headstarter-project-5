@@ -11,7 +11,10 @@ export async function POST(request: NextRequest) {
     apiKey: process.env.PINECONE_API_KEY as string,
   });
   const index = pc.index("rag").namespace("ns1");
-  const openai = new OpenAI();
+  const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+    dangerouslyAllowBrowser: true
+  });
 
   const text = data[data.length - 2].content;
 
